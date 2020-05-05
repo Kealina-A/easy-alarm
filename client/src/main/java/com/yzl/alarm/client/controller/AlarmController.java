@@ -19,7 +19,13 @@ public class AlarmController {
 
     @GetMapping("send")
     public String send() {
+        //.... 此处为正常的业务逻辑....
+
+        // 为了不影响正常的业务，异步执行
         ThreadPoolUtil.getPool().execute(new AlarmThread(redisUtil, AlarmInfoEnum.TEST));
+
+        //.... 此处为正常的业务逻辑....
+
         return "success";
     }
 

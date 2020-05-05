@@ -30,6 +30,7 @@ public class AlarmSchedule {
             }
             Integer counter = Integer.valueOf(redisUtil.get(counterKey));
             if (counter >= alarmInfo.getThreshold()) {
+                //　此处没有对结果进行判断，正常需要加上结果进行处理，而且此处只有一种通知方式，可根据业务进行扩展
                 alarmService.sendByServerJ(alarmInfo.getMsg());
                 redisUtil.setEx(markKey,"true",alarmInfo.getSendInterval(), TimeUnit.MINUTES);
             }

@@ -19,6 +19,9 @@ public class RedisUtil {
         this.stringRedisTemplate = stringRedisTemplate;
     }
 
+    /**
+     * 计数
+     */
     public void incrEx(String key,int increment,int timeout,TimeUnit timeUnit) {
         if (this.hasKey(key)) {
             this.incrBy(key,increment);

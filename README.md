@@ -12,10 +12,9 @@
 
 ## 使用
 0. 创建事件：　在AlarmInfoEnum 中添加事件，如：   `TEST("TEST","这是测试内容~",1,1,1)`
-
 1. 触发事件：　
 `redisUtil.incrEx(key,1,alarmKey.getCallInterval(), TimeUnit.MINUTES)`;
-
+ps:在　client  里有个触发接口，可调试 `http://127.0.0.1:8081/alarm/send`
 ## 原理
 1. 客户端：触发事件，通过对某一个`告警事件`进行`计数`(使用redis),使用　redis 的超时设置
 2. 服务端：对`告警事件`进行检测,当在一段时间内触发次数超过设置的`阀值`，发送告警信息，
