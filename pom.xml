@@ -25,7 +25,7 @@
     <properties>
         <java.version>1.8</java.version>
         <boot.redis.version>1.4.7.RELEASE</boot.redis.version>
-        <hutool.version>5.0.0</hutool.version>
+        <hutool.version>5.8.21</hutool.version>
     </properties>
 
     <dependencies>
